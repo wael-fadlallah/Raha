@@ -1,14 +1,18 @@
 import React from 'react';
-import {View} from 'react-native';
-import {Button, Text} from 'react-native-paper';
+import {ImageBackground, View} from 'react-native';
+import styles from './style';
+import Logo from '../../assets/AppLogo';
+const background = './../../assets/background.jpg';
 
-const SplashScreen = (props: any) => {
-  const {navigation} = props;
+const SplashScreen = (_props: any) => {
   return (
-    <View>
-      <Text>Splash</Text>
-
-      <Button onPress={() => navigation.navigate('Login')}>Spank</Button>
+    <View style={styles.container}>
+      <ImageBackground
+        source={require(background)}
+        resizeMode="cover"
+        style={styles.background}>
+        <Logo />
+      </ImageBackground>
     </View>
   );
 };
