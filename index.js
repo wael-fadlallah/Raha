@@ -6,10 +6,13 @@ import {AppRegistry} from 'react-native';
 import App from './App';
 import {name as appName} from './app.json';
 import {Provider as PaperProvider} from 'react-native-paper';
+import {NavigationContainer} from '@react-navigation/native';
 
 const Main = () => (
   <PaperProvider>
-    <App />
+    <NavigationContainer>
+      <App />
+    </NavigationContainer>
   </PaperProvider>
 );
 

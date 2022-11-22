@@ -1,19 +1,16 @@
 import React from 'react';
-import {SafeAreaView, Text} from 'react-native';
-import {Button} from 'react-native-paper';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import Splash from './src/screens/SplashScreen';
+import Login from './src/screens/LoginScreen';
+
+const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
-    <SafeAreaView>
-      <Text>Hello world</Text>
-      <Button
-        icon={'camera'}
-        mode="contained"
-        onPress={() => console.log('Harder daddy')}>
-        Spank me
-      </Button>
-    </SafeAreaView>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen name={Splash.title} component={Splash.componen} />
+      <Stack.Screen name={Login.title} component={Login.componen} />
+    </Stack.Navigator>
   );
 };
-
 export default App;
