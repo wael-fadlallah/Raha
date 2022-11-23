@@ -1,19 +1,28 @@
 import React from 'react';
-import {ImageBackground, View} from 'react-native';
+import {ImageBackground, View, StatusBar} from 'react-native';
 import styles from './style';
-import Logo from '../../assets/AppLogo';
-const background = './../../assets/background.jpg';
+import {SplashScreenProps} from '../../types';
+import {background, app_logo} from '../../assets';
+import {LocalSvg} from 'react-native-svg';
 
-const SplashScreen = (_props: any) => {
+const SplashScreen = (props: SplashScreenProps) => {
+  const {navigation} = props;
   return (
     <View style={styles.container}>
+      <StatusBar hidden={true} />
       <ImageBackground
-        source={require(background)}
+        source={background}
         resizeMode="cover"
         style={styles.background}>
-        <Logo />
+        <LocalSvg
+          asset={app_logo}
+          onPress={() => navigation.navigate('Login')}
+          width={200}
+          height={200}
+          style={styles.logo}
+        />
       </ImageBackground>
     </View>
   );
 };
-export default {componen: SplashScreen, title: 'Splash'};
+export default {componen: SplashScreen};
