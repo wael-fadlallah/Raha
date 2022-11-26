@@ -1,6 +1,6 @@
 import React from 'react';
 import {ImageBackground, StatusBar, View} from 'react-native';
-import {Text} from 'react-native-paper';
+import {Button, Text} from 'react-native-paper';
 import {LocalSvg} from 'react-native-svg';
 import {background, app_logo} from '../../assets';
 import {LoginScreenProps} from '../../types';
@@ -24,6 +24,15 @@ const LoginScreen = (_props: LoginScreenProps) => {
           <Text style={styles.welcomeText}>WELCOME</Text>
           <Text style={styles.captionText}>
             Do meditation. Stay focused. Live a healthy life.
+          </Text>
+        </View>
+
+        <View style={{alignItems: 'center'}}>
+          <Button mode="contained" style={{borderRadius: 10, width: '70%'}}>
+            Login With Email
+          </Button>
+          <Text style={{color: 'white', fontWeight: 'bold', marginTop: 18}}>
+            Don’t have an account? Sign Up
           </Text>
         </View>
       </ImageBackground>
