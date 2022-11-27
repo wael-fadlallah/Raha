@@ -6,7 +6,22 @@ export type SplashScreenProps = NativeStackScreenProps<
   'Splash'
 >;
 
+export type OnBoardingScreenProps = NativeStackScreenProps<
+  RootStackParamList,
+  'OnBoarding'
+>;
+
 export type LoginScreenProps = NativeStackScreenProps<
   RootStackParamList,
   'Login'
+>;
+
+export type SignUpScreenProps = NativeStackScreenProps<
+  RootStackParamList,
+  'SignUp'
+>;
+
+export type MainScreenProps = NativeStackScreenProps<
+  RootStackParamList,
+  'Main'
 >;

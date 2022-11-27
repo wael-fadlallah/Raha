@@ -16,7 +16,7 @@ const SplashScreen = (props: SplashScreenProps) => {
         style={styles.background}>
         <LocalSvg
           asset={app_logo}
-          onPress={() => navigation.navigate('Login')}
+          onPress={() => navigation.navigate('OnBoarding')}
           width={200}
           height={200}
           style={styles.logo}

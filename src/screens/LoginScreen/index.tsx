@@ -1,43 +1,65 @@
 import React from 'react';
-import {ImageBackground, StatusBar, View} from 'react-native';
-import {Button, Text} from 'react-native-paper';
-import {LocalSvg} from 'react-native-svg';
-import {background, app_logo} from '../../assets';
+import {View} from 'react-native';
+import {Button, Text, TextInput, useTheme} from 'react-native-paper';
 import {LoginScreenProps} from '../../types';
-import styles from './style';
+import getStyles from './style';
+import {app_logo, background_shape} from '../../assets';
+import {LocalSvg} from 'react-native-svg';
 
-const LoginScreen = (_props: LoginScreenProps) => {
+function LoginScreen(props: LoginScreenProps) {
+  const {navigation} = props;
+  const theme = useTheme();
+  const styles = getStyles(theme);
+
   return (
     <View style={styles.container}>
-      <StatusBar hidden={true} />
-      <ImageBackground
-        source={background}
-        resizeMode="cover"
-        style={styles.background}>
-        <LocalSvg
-          asset={app_logo}
-          width={200}
-          height={200}
-          style={styles.logo}
-        />
-        <View style={styles.captionContainer}>
-          <Text style={styles.welcomeText}>WELCOME</Text>
-          <Text style={styles.captionText}>
-            Do meditation. Stay focused. Live a healthy life.
-          </Text>
-        </View>
+      <LocalSvg
+        asset={background_shape}
+        style={{position: 'absolute', bottom: 0, end: 0}}
+      />
+      <View>
+        <LocalSvg asset={app_logo} width={43} height={49} style={styles.logo} />
 
-        <View style={{alignItems: 'center'}}>
-          <Button mode="contained" style={{borderRadius: 10, width: '70%'}}>
-            Login With Email
+        <Text style={styles.signInLabel}>Sign In</Text>
+
+        <Text style={styles.signInDesc}>
+          Sign in now to acces your excercises and saved music.
+        </Text>
+
+        <View style={styles.formContainer}>
+          <TextInput
+            mode="flat"
+            label={<Text style={styles.inputLabel}>Email Address</Text>}
+            textColor="#FFFFFF"
+            style={styles.inputStyle}
+          />
+          <TextInput
+            mode="flat"
+            secureTextEntry={true}
+            textContentType="password"
+            label={<Text style={styles.inputLabel}>Password</Text>}
+            textColor="#FFFFFF"
+            style={styles.inputStyle}
+          />
+          <Text style={styles.fotgotPasswordLabel} onPress={() => {}}>
+            Forgot Password?
+          </Text>
+
+          <Button
+            mode="contained"
+            style={styles.loginBtn}
+            labelStyle={styles.btnLabel}>
+            Login
           </Button>
-          <Text style={{color: 'white', fontWeight: 'bold', marginTop: 18}}>
-            Don’t have an account? Sign Up
+
+          <Text style={styles.text}>
+            Don’t have an account?
+            <Text onPress={() => navigation.navigate('SignUp')}> Sign Up </Text>
           </Text>
         </View>
-      </ImageBackground>
+      </View>
     </View>
   );
-};
+}
 
-export default {componen: LoginScreen, title: 'Login'};
+export default LoginScreen;

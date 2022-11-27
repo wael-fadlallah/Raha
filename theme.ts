@@ -5,7 +5,8 @@ export default {
   colors: {
     ...DefaultTheme.colors,
     primary: '#7C9A92',
-    secondary: '#f1c40f',
+    secondary: '#253334',
     tertiary: '#a1b2c3',
+    onSurface: '#FFFFFF',
   },
 };
