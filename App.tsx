@@ -4,6 +4,7 @@ import Splash from './src/screens/SplashScreen';
 import OnBoardingScreen from './src/screens/OnBoardingScreen';
 import LoginScreen from './src/screens/LoginScreen';
 import SignUpScreen from './src/screens/SignUpScreen';
+import MainScreen from './src/screens/MainScreen';
 
 export type RootStackParamList = {
   Splash: undefined;
@@ -19,11 +20,12 @@ const App = () => {
   return (
     <Stack.Navigator
       screenOptions={{headerShown: false, presentation: 'transparentModal'}}
-      initialRouteName="Splash">
+      initialRouteName="Main">
       <Stack.Screen name={'Splash'} component={Splash.componen} />
       <Stack.Screen name={'OnBoarding'} component={OnBoardingScreen.componen} />
       <Stack.Screen name={'Login'} component={LoginScreen} />
       <Stack.Screen name={'SignUp'} component={SignUpScreen} />
+      <Stack.Screen name={'Main'} component={MainScreen} />
     </Stack.Navigator>
   );
 };

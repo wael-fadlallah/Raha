@@ -48,7 +48,8 @@ function LoginScreen(props: LoginScreenProps) {
           <Button
             mode="contained"
             style={styles.loginBtn}
-            labelStyle={styles.btnLabel}>
+            labelStyle={styles.btnLabel}
+            onPress={() => navigation.navigate('Main')}>
             Login
           </Button>
 
