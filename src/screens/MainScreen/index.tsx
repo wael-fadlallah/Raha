@@ -1,19 +1,17 @@
 import React from 'react';
 import {View} from 'react-native';
-import {Text, useTheme} from 'react-native-paper';
+import {useTheme} from 'react-native-paper';
 import getStyle from './style';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import LoginScreen from '../LoginScreen';
-import SignUpScreen from '../SignUpScreen';
 import {NavigationContainer} from '@react-navigation/native';
+import HomeScreen from '../HomeScreen';
 
 const DrawerComponent = () => {
   const Drawer = createDrawerNavigator();
   return (
     <NavigationContainer independent={true}>
-      <Drawer.Navigator screenOptions={{headerShown: true}}>
-        <Drawer.Screen name="Login" component={LoginScreen} />
-        <Drawer.Screen name="SignUp" component={SignUpScreen} />
+      <Drawer.Navigator screenOptions={{headerShown: false}}>
+        <Drawer.Screen name="Home" component={HomeScreen} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
@@ -26,7 +24,6 @@ function MainScreen() {
   return (
     <View style={styles.container}>
       <DrawerComponent />
-      <Text>Test</Text>
     </View>
   );
 }

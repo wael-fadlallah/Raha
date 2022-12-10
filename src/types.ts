@@ -25,3 +25,8 @@ export type MainScreenProps = NativeStackScreenProps<
   RootStackParamList,
   'Main'
 >;
+
+export type HomeScreenProps = NativeStackScreenProps<
+  RootStackParamList,
+  'Home'
+>;
