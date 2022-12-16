@@ -5,6 +5,6 @@ export default (theme: MD3Theme) =>
   StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: theme.colors.primary,
+      backgroundColor: theme.colors.secondary,
     },
   });
