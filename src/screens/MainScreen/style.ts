@@ -6,5 +6,6 @@ export default (theme: MD3Theme) =>
     container: {
       flex: 1,
       backgroundColor: theme.colors.secondary,
+      paddingHorizontal: 16,
     },
   });

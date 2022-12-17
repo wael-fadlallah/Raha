@@ -1,6 +1,7 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {DrawerScreenProps} from '@react-navigation/drawer';
 import {RootStackParamList} from '../App';
+import {DrawerStackParamList} from './screens/MainScreen';
 
 export type SplashScreenProps = NativeStackScreenProps<
   RootStackParamList,
@@ -27,4 +28,4 @@ export type MainScreenProps = NativeStackScreenProps<
   'Main'
 >;
 
-export type HomeScreenProps = DrawerScreenProps<RootStackParamList, 'Home'>;
+export type HomeScreenProps = DrawerScreenProps<DrawerStackParamList, 'Home'>;

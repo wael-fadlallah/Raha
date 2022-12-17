@@ -6,11 +6,22 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import {NavigationContainer} from '@react-navigation/native';
 import HomeScreen from '../HomeScreen';
 
+export type DrawerStackParamList = {
+  Home: undefined;
+};
 const DrawerComponent = () => {
-  const Drawer = createDrawerNavigator();
+  const theme = useTheme();
+  const Drawer = createDrawerNavigator<DrawerStackParamList>();
+
+  const drawerConfig = {
+    headerShown: false,
+    drawerActiveBackgroundColor: theme.colors.onSurface,
+    drawerActiveTintColor: theme.colors.secondary,
+    drawerStyle: {backgroundColor: theme.colors.primary},
+  };
   return (
     <NavigationContainer independent={true}>
-      <Drawer.Navigator screenOptions={{headerShown: false}}>
+      <Drawer.Navigator screenOptions={drawerConfig}>
         <Drawer.Screen name="Home" component={HomeScreen} />
       </Drawer.Navigator>
     </NavigationContainer>
