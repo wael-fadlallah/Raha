@@ -5,6 +5,7 @@ import OnBoardingScreen from './src/screens/OnBoardingScreen';
 import LoginScreen from './src/screens/LoginScreen';
 import SignUpScreen from './src/screens/SignUpScreen';
 import MainScreen from './src/screens/MainScreen';
+import PlayerScreen from './src/screens/PlayerScreen';
 
 export type RootStackParamList = {
   Splash: undefined;

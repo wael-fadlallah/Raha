@@ -5,9 +5,11 @@ import getStyle from './style';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {NavigationContainer} from '@react-navigation/native';
 import HomeScreen from '../HomeScreen';
+import PlayerScreen from '../PlayerScreen';
 
 export type DrawerStackParamList = {
   Home: undefined;
+  Player: undefined;
 };
 const DrawerComponent = () => {
   const theme = useTheme();
@@ -23,6 +25,7 @@ const DrawerComponent = () => {
     <NavigationContainer independent={true}>
       <Drawer.Navigator screenOptions={drawerConfig}>
         <Drawer.Screen name="Home" component={HomeScreen} />
+        <Drawer.Screen name="Player" component={PlayerScreen} />
       </Drawer.Navigator>
     </NavigationContainer>
   );

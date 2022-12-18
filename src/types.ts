@@ -28,4 +28,9 @@ export type MainScreenProps = NativeStackScreenProps<
   'Main'
 >;
 
+export type PlayerScreenProps = NativeStackScreenProps<
+  RootStackParamList,
+  'Player'
+>;
+
 export type HomeScreenProps = DrawerScreenProps<DrawerStackParamList, 'Home'>;
